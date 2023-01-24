@@ -1,0 +1,29 @@
+<div class="container">
+    <div class="listaActivos">
+        <h3>Estudiantes Activos</h3>
+        <ul *ngFor="let estudiante of listaEstudiantes">
+            <li>{{estudiante.nombre}}</li>
+        </ul>
+    </div>
+
+    <div class="listaInactivos">
+        <h3>Estudiantes Inactivos</h3>
+        <ul *ngFor="let estudiante of listaEstudiantes">
+            <li *ngIf="estudiante.estaActivo == false" DirectivaEstudianteActivo>{{estudiante.nombre}}</li>
+        </ul>
+    </div>
+
+    <div >
+        <h3>Estudiantes por Materias</h3>
+
+        <h4>Materia Angular:</h4>
+        <ul *ngFor="let estudiante of listaEstudiantes">
+            <li *ngIf="estudiante.materia==='Angular'">{{estudiante.nombre}}</li>
+        </ul>
+
+        <h4>Materia React</h4>
+        <ul *ngFor="let estudiante of listaEstudiantes">
+            <li *ngIf="estudiante.materia==='React'">{{estudiante.nombre}}</li>
+        </ul>
+    </div>
+</div>
